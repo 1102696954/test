@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'com.google.cloud.tools.jib' version '1.8.0'
+}
+
+group = 'com.example.mobile'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    //swagger 依赖
+    testImplementation 'org.mockito:mockito-core:3.11.2'
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.0.3'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config:3.0.5'
+    implementation 'cn.hutool:hutool-all:5.4.4'
+    implementation 'org.apache.commons:commons-pool2'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+}
+
+test {
+    useJUnitPlatform()
+}
